@@ -61,7 +61,8 @@ class bert_data():
             num_workers=self.num_workers,
             pin_memory=True,
             shuffle=shuffle,
-            worker_init_fn=_init_fn
+            worker_init_fn=_init_fn,
+            drop_last=True
         )
         return dataloader
 
@@ -128,6 +129,7 @@ class w2v_data():
             batch_size=self.batch_size,
             num_workers=self.num_workers,
             pin_memory=True,
-            shuffle=shuffle
+            shuffle=shuffle,
+            drop_last=True
         ) 
         return dataloader
